@@ -328,28 +328,19 @@ and input/output.
 
 </div>
 
-A short summary and explanation of the fundamental decisions and
-solution strategies, that shape system architecture. It includes
+The project is implemented with service oriented architecture for the most part, but some services are handled in form of micro services.
 
--   technology decisions
+Our strategies are mostly based on ease of use and accessibility, and as such essential functionality will be held as simple as possible.
 
--   decisions about the top-level decomposition of the system, e.g.
-    usage of an architectural pattern or design pattern
 
--   decisions on how to achieve key quality goals
-
--   relevant organizational decisions, e.g. selecting a development
-    process or delegating certain tasks to third parties.
-
-<div class="formalpara-title">
 
 **Motivation**
 
 </div>
 
-These decisions form the cornerstones for your architecture. They are
-the foundation for many other detailed decisions or implementation
-rules.
+Our strategies focus on providing an accessible university management tool for people who do not have extensive technical knowledge.
+
+Another important factor is the consistency and security of the data.
 
 <div class="formalpara-title">
 
@@ -357,14 +348,11 @@ rules.
 
 </div>
 
-Keep the explanations of such key decisions short.
-
-Motivate what was decided and why it was decided that way, based upon
-problem statement, quality goals and key constraints. Refer to details
-in the following sections.
-
-See [Solution Strategy](https://docs.arc42.org/section-4/) in the arc42
-documentation.
+| Quality Goal                                                 | Solution Approach         |
+| ------------------------------------------------------------ | ------------------------- |
+| Students should be able to access all functionality without additional training. | SOA                       |
+| Resources and information should always be available; backups are required. | SOA                       |
+| Only authorized users should be able to access services.     | Microservices (i.e. LDAP) |
 
 <div style="page-break-after: always;"></div>
 
@@ -869,15 +857,14 @@ documentation.
 
 </div>
 
-The following architactural decisions were taken: 
+The following architectural decisions were taken: 
 
-| Problem | Alternatives | Decision |
-|--------------------|-------------------|-------------------|
-| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> singular DB sufficient |
-|Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users |
-
+| Problem                                                      | Alternatives                                               | Decision                                                     |
+| ------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| Inconsistent data with multiple servers                      | Central data storage                                       | Data volume small enough -> singular DB sufficient           |
+| Security for sensitive data                                  | Use external authentication service like LDAP              | Use LDAP                                                     |
+| Too many different features, confusing for non technical users | keep simple, clearly highlight each features functionality | choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users |
 <div class="formalpara-title">
-
 **Motivation**
 
 </div>
