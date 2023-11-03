@@ -1058,10 +1058,9 @@ of the overall risk analysis and measurement planning.
 
 | Risk/Technical Debt | Definition |
 |--------------------|-------------------|
-| Grade management| Too many students might use the system during online 
-exams and on deadlines for assignments |
-| Overload during exams | Small group responsible, might be bottlenecked -> ideally supported by automation |
-| Attandance tracking | Needs to happen during class -> preferably done by students to relief lecturer |
+| Grade management| Too many students might use the system during online <br/> exams and on deadlines for assignments |
+| Overload during exams | Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
+| Attandance tracking | Needs to happen during class -> preferably done by <br/> students to relief lecturer |
 
 See [Risks and Technical Debt](https://docs.arc42.org/section-11/) in
 the arc42 documentation.
