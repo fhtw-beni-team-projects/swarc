@@ -873,8 +873,8 @@ The following architactural decisions were taken:
 
 | Problem | Alternatives | Decision |
 |--------------------|-------------------|
-| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> single DB sufficient |
-|
+| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> singular DB sufficient |
+|Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users |
 
 <div class="formalpara-title">
 
