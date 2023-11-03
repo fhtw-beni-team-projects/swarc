@@ -1034,8 +1034,7 @@ Tabular or free form text.
 
 </div>
 
-A list of identified technical risks or technical debts, ordered by
-priority
+A list of identified technical risks or technical debts, ordered by priority
 
 <div class="formalpara-title">
 
@@ -1056,9 +1055,15 @@ of the overall risk analysis and measurement planning.
 **Form**
 
 </div>
-
 List of risks and/or technical debts, probably including suggested
 measures to minimize, mitigate or avoid risks or reduce technical debts.
+
+| Risk/Technical Debt    | Definition        |
+|------------------------|-------------------|
+| Grade management       | Too many students might use the system during online exams and on deadlines for assignments
+ |
+| Overload during exams  | Small group responsible, might be bottlenecked -> ideally supported by automation |
+| Attandance tracking    | Needs to happen during class -> preferably done by students to relief lecturer |
 
 See [Risks and Technical Debt](https://docs.arc42.org/section-11/) in
 the arc42 documentation.
