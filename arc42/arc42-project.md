@@ -863,7 +863,7 @@ The following architectural decisions were taken:
 | ------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ |
 | Inconsistent data with multiple servers                      | Central data storage                                       | Data volume small enough -> singular DB sufficient           |
 | Security for sensitive data                                  | Use external authentication service like LDAP              | Use LDAP                                                     |
-| Too many different features, confusing for non technical users | keep simple, clearly highlight each features functionality | choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users |
+| Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users |
 <div class="formalpara-title">
 **Motivation**
 
@@ -1040,8 +1040,8 @@ of the overall risk analysis and measurement planning.
 
 | Risk/Technical Debt | Definition |
 |--------------------|-------------------|
-| Grade management| Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
-| Overload during exams | Too many students might use the system during online <br/> exams and on deadlines for assignments |
+| Grade management| Too many students might use the system during online <br/> exams and on deadlines for assignments |
+| Overload during exams | Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
 | Attandance tracking | Needs to happen during class -> preferably done by <br/> students to relief lecturer |
 
 See [Risks and Technical Debt](https://docs.arc42.org/section-11/) in
