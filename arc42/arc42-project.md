@@ -873,7 +873,8 @@ The following architactural decisions were taken:
 
 | Problem | Alternatives | Decision |
 |--------------------|-------------------|
-| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> singular DB sufficient |
+| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> single DB sufficient |
+|
 
 <div class="formalpara-title">
 
@@ -1052,8 +1053,8 @@ of the overall risk analysis and measurement planning.
 
 | Risk/Technical Debt | Definition |
 |--------------------|-------------------|
-| Grade management| Too many students might use the system during online <br/> exams and on deadlines for assignments |
-| Overload during exams | Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
+| Grade management| Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
+| Overload during exams | Too many students might use the system during online <br/> exams and on deadlines for assignments |
 | Attandance tracking | Needs to happen during class -> preferably done by <br/> students to relief lecturer |
 
 See [Risks and Technical Debt](https://docs.arc42.org/section-11/) in
