@@ -189,9 +189,16 @@ always be dealt with; they may be negotiable, though.
 
 </div>
 
-Simple tables of constraints with explanations. If needed you can
+| Constraints                                                 | Background and/or Motivation         |
+| ------------------------------------------------------------ | ------------------------- |
+| Run on every system | To make the application accessible to everyone, users must not require special/specific devices to use it.          |
+| Integration with other university tools | The system should be compatible with existing tools and software of the university, such as the mailing (SOGO) and campus inforamtion system (CIS).  |
+| Accessible from outside     | Users should not be required to be on premise to use the application. |
+| Adaptable for different universities     | Design and features should be customizable and adjustable to the needs of individual universities. |
+
+[//]: # (Simple tables of constraints with explanations. If needed you can
 subdivide them into technical constraints, organizational and political
-constraints and conventions (e.g. programming or versioning guidelines,
+constraints and conventions e.g. programming or versioning guidelines,
 documentation or naming conventions)
 
 See [Architecture Constraints](https://docs.arc42.org/section-2/) in the
