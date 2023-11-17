@@ -871,10 +871,13 @@ documentation.
 
 The following architactural decisions were taken: 
 
-| Problem | Alternatives | Decision |
-|--------------------|-------------------|-------------------|
-| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> singular DB sufficient |
-|Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users |
+| Context | Alternatives | Decision | Consequences |
+|--------------------|-------------------|-------------------|-------------------|
+| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> singular DB sufficient | |
+| Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users | |
+| The university this project is for already uses LDAP for authentication | | We will keep the UI simple and clearly highlight each feature's functionality | We will have to put more care into the design, which will take more time | We will have to put more care into the design, which will take more time |
+| We plan to potentially expand our product to be used by different universities with different requirements in the future | | We will build our application in a service oriented style | The product is modular and customizable for other universities |
+| The university this project is for already uses LDAP for authentication | | We will build upon that and also work with LDAP building our software | We won’t have to look into/use another way to authenticate users, which saves time |
 
 <div class="formalpara-title">
 
