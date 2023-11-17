@@ -189,9 +189,16 @@ always be dealt with; they may be negotiable, though.
 
 </div>
 
-Simple tables of constraints with explanations. If needed you can
+| Constraints                                                 | Background and/or Motivation         |
+| ------------------------------------------------------------ | ------------------------- |
+| Run on every system | To make the application accessible to everyone, users must not require special/specific devices to use it.          |
+| Integration with other university tools | The system should be compatible with existing tools and software of the university, such as the mailing (SOGO) and campus inforamtion system (CIS).  |
+| Accessible from outside     | Users should not be required to be on premise to use the application. |
+| Adaptable for different universities     | Design and features should be customizable and adjustable to the needs of individual universities. |
+
+[//]: # (Simple tables of constraints with explanations. If needed you can
 subdivide them into technical constraints, organizational and political
-constraints and conventions (e.g. programming or versioning guidelines,
+constraints and conventions e.g. programming or versioning guidelines,
 documentation or naming conventions)
 
 See [Architecture Constraints](https://docs.arc42.org/section-2/) in the
@@ -328,28 +335,19 @@ and input/output.
 
 </div>
 
-A short summary and explanation of the fundamental decisions and
-solution strategies, that shape system architecture. It includes
+The project is implemented with service oriented architecture for the most part, but some services are handled in form of micro services.
 
--   technology decisions
+Our strategies are mostly based on ease of use and accessibility, and as such essential functionality will be held as simple as possible.
 
--   decisions about the top-level decomposition of the system, e.g.
-    usage of an architectural pattern or design pattern
 
--   decisions on how to achieve key quality goals
-
--   relevant organizational decisions, e.g. selecting a development
-    process or delegating certain tasks to third parties.
-
-<div class="formalpara-title">
 
 **Motivation**
 
 </div>
 
-These decisions form the cornerstones for your architecture. They are
-the foundation for many other detailed decisions or implementation
-rules.
+Our strategies focus on providing an accessible university management tool for people who do not have extensive technical knowledge.
+
+Another important factor is the consistency and security of the data.
 
 <div class="formalpara-title">
 
@@ -357,14 +355,11 @@ rules.
 
 </div>
 
-Keep the explanations of such key decisions short.
-
-Motivate what was decided and why it was decided that way, based upon
-problem statement, quality goals and key constraints. Refer to details
-in the following sections.
-
-See [Solution Strategy](https://docs.arc42.org/section-4/) in the arc42
-documentation.
+| Quality Goal                                                 | Solution Approach         |
+| ------------------------------------------------------------ | ------------------------- |
+| Students should be able to access all functionality without additional training. | SOA                       |
+| Resources and information should always be available; backups are required. | SOA                       |
+| Only authorized users should be able to access services.     | Microservices (i.e. LDAP) |
 
 <div style="page-break-after: always;"></div>
 
@@ -869,7 +864,7 @@ documentation.
 
 </div>
 
-The following architactural decisions were taken: 
+The following architectural decisions were taken: 
 
 | Context | Alternatives | Decision | Consequences |
 |--------------------|-------------------|-------------------|-------------------|
@@ -880,7 +875,6 @@ The following architactural decisions were taken:
 | The university this project is for already uses LDAP for authentication | | We will build upon that and also work with LDAP building our software | We won’t have to look into/use another way to authenticate users, which saves time |
 
 <div class="formalpara-title">
-
 **Motivation**
 
 </div>
@@ -1056,8 +1050,8 @@ of the overall risk analysis and measurement planning.
 
 | Risk/Technical Debt | Definition |
 |--------------------|-------------------|
-| Grade management| Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
-| Overload during exams | Too many students might use the system during online <br/> exams and on deadlines for assignments |
+| Grade management| Too many students might use the system during online <br/> exams and on deadlines for assignments |
+| Overload during exams | Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
 | Attandance tracking | Needs to happen during class -> preferably done by <br/> students to relief lecturer |
 
 See [Risks and Technical Debt](https://docs.arc42.org/section-11/) in
