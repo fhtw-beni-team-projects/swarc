@@ -87,12 +87,6 @@ fulfillment is of highest importance to the major stakeholders. We
 really mean quality goals for the architecture. Don’t confuse them with
 project goals. They are not necessarily identical.
 
-Consider this overview of potential topics (based upon the ISO 25010
-standard):
-
-![Categories of Quality
-Requirements](images/01_2_iso-25010-topics-EN.drawio.png)
-
 <div class="formalpara-title">
 
 **Motivation**
@@ -111,6 +105,13 @@ architect do not know how the quality of your work will be judged…
 </div>
 
 A table with quality goals and concrete scenarios, ordered by priorities
+
+| Quality Goal | Quality Scenario |
+|-------------|----------------|
+| Learnability/Understandability | A new student can find the see the schedule, course contents, deadlines, and other resources without additional information and within the first minutes of using the application. |
+| Accuracy | The correct grades, added by lecturers or by the system (in the case of automatic grading), are shown to the student. |
+| Recoverability | A server crashes and a user session is recovered within an hour by using persistence mechanisms. |
+| Fault tolerance | A user has bad internet connection. Upload process does not have to be started anew. |
 
 ## Stakeholders
 
