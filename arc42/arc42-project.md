@@ -87,12 +87,6 @@ fulfillment is of highest importance to the major stakeholders. We
 really mean quality goals for the architecture. Don’t confuse them with
 project goals. They are not necessarily identical.
 
-Consider this overview of potential topics (based upon the ISO 25010
-standard):
-
-![Categories of Quality
-Requirements](images/01_2_iso-25010-topics-EN.drawio.png)
-
 <div class="formalpara-title">
 
 **Motivation**
@@ -111,6 +105,13 @@ architect do not know how the quality of your work will be judged…
 </div>
 
 A table with quality goals and concrete scenarios, ordered by priorities
+
+| Quality Goal | Quality Scenario |
+|-------------|----------------|
+| Learnability/Understandability | A new student can find the see the schedule, course contents, deadlines, and other resources without additional information and within the first minutes of using the application. |
+| Accuracy | The correct grades, added by lecturers or by the system (in the case of automatic grading), are shown to the student. |
+| Recoverability | A server crashes and a user session is recovered within an hour by using persistence mechanisms. |
+| Fault tolerance | A user has bad internet connection. Upload process does not have to be started anew. |
 
 ## Stakeholders
 
@@ -189,9 +190,16 @@ always be dealt with; they may be negotiable, though.
 
 </div>
 
-Simple tables of constraints with explanations. If needed you can
+| Constraints                                                 | Background and/or Motivation         |
+| ------------------------------------------------------------ | ------------------------- |
+| Run on every system | To make the application accessible to everyone, users must not require special/specific devices to use it.          |
+| Integration with other university tools | The system should be compatible with existing tools and software of the university, such as the mailing (SOGO) and campus inforamtion system (CIS).  |
+| Accessible from outside     | Users should not be required to be on premise to use the application. |
+| Adaptable for different universities     | Design and features should be customizable and adjustable to the needs of individual universities. |
+
+[//]: # (Simple tables of constraints with explanations. If needed you can
 subdivide them into technical constraints, organizational and political
-constraints and conventions (e.g. programming or versioning guidelines,
+constraints and conventions e.g. programming or versioning guidelines,
 documentation or naming conventions)
 
 See [Architecture Constraints](https://docs.arc42.org/section-2/) in the
@@ -898,11 +906,14 @@ documentation.
 
 The following architectural decisions were taken: 
 
-| Problem                                                      | Alternatives                                               | Decision                                                     |
-| ------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| Inconsistent data with multiple servers                      | Central data storage                                       | Data volume small enough -> singular DB sufficient           |
-| Security for sensitive data                                  | Use external authentication service like LDAP              | Use LDAP                                                     |
-| Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users |
+| Context | Alternatives | Decision | Consequences |
+|--------------------|-------------------|-------------------|-------------------|
+| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> singular DB sufficient | |
+| Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users | |
+| The university this project is for already uses LDAP for authentication | | We will keep the UI simple and clearly highlight each feature's functionality | We will have to put more care into the design, which will take more time | We will have to put more care into the design, which will take more time |
+| We plan to potentially expand our product to be used by different universities with different requirements in the future | | We will build our application in a service oriented style | The product is modular and customizable for other universities |
+| The university this project is for already uses LDAP for authentication | | We will build upon that and also work with LDAP building our software | We won’t have to look into/use another way to authenticate users, which saves time |
+
 <div class="formalpara-title">
 **Motivation**
 
