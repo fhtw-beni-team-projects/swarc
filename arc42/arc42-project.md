@@ -1,15 +1,5 @@
 # 
 
-**About arc42**
-
-arc42, the template for documentation of software and system
-architecture.
-
-Template Version 8.2 EN. (based upon AsciiDoc version), January 2023
-
-Created, maintained and © by Dr. Peter Hruschka, Dr. Gernot Starke and
-contributors. See <https://arc42.org>.
-
 <div class="note">
 
 This version of the template contains some help and explanations. It is
@@ -55,8 +45,10 @@ find it).
 
 </div>
 
-From the point of view of the end users a system is created or modified
-to improve support of a business activity and/or improve the quality.
+///From the point of view of the end users a system is created or modified
+to improve support of a business activity and/or improve the quality.///
+
+From the point of view of the end users, mainly students and lecturers, as well as other ... , this system is to facilitate the 
 
 <div class="formalpara-title">
 
@@ -190,8 +182,8 @@ always be dealt with; they may be negotiable, though.
 
 </div>
 
-| Constraints                                                 | Background and/or Motivation         |
-| ------------------------------------------------------------ | ------------------------- |
+| Constraints | Background and/or Motivation |
+| ------------------------- | ------------------------- |
 | Run on every system | To make the application accessible to everyone, users must not require special/specific devices to use it.          |
 | Integration with other university tools | The system should be compatible with existing tools and software of the university, such as the mailing (SOGO) and campus inforamtion system (CIS).  |
 | Accessible from outside     | Users should not be required to be on premise to use the application. |
