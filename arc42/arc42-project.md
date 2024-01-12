@@ -391,6 +391,45 @@ level without disclosing implementation details.
 
 </div>
 
+1. Level 1
+
+| Block | Description |
+|---|---|
+| Courses | Main component handling courses |
+| Grade Report System | Responsible for final reports |
+| Persistance | Database and File handling |
+| Student Enrollment and Managment | Handles information and status of students |
+| Frontend web-service | webserver |
+
+
+2. Level 2
+2.1. Whitebox
+
+TODO: img
+
+| Block | Description |
+|---|---|
+| Course Material | Database access |
+| Participants | Links enrolled students to courses |
+| Assignments | Handles uploads and schedules for hand-ins |
+| Exams | Handles times for exams and some automatic grading |
+| Grading | Calculates grades from assignments and exams and forwards them to the mail system/grade report system |
+| Attendance tracking | Collects attendance during classes to forward to enrollment system |
+| Schedule Generator | Generates conflict free schedules |
+
+2.1.1. Course Material (blackbox)
+The course material component constructs a course in form of the defined course xml format (\*not actual), or constructs questions based on the material. It takes data from the persistence service. The following methods are available through its interface:
+- `getFullCourse(lecturer)`: returns an xml formated course, the boolean `lecturer` toggles lecturer view (default: `false`)
+- `getExamQuestions(class_start, class_end)`: returns exam questions (xml), start and end specify for which classes to take questions from
+- `getAssignment(class)`: returns assignment text and deadline in unix epoch (xml) for each assignemnt in the class or an empty list, class specifies which class to take from
+
+2.1.2. Assignments (blackbox)
+The assignments component handles the upload window and file upload for assignemnts, which are stored with the persistence service.
+
+lvl3
+
+TODO: Make a class diagram
+
 The building block view is a hierarchical collection of black boxes and
 white boxes (see figure below) and their descriptions.
 
