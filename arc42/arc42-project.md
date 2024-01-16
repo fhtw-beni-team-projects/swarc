@@ -556,42 +556,14 @@ Tabular or free form text.
 
 # Risks and Technical Debts
 
-<div class="formalpara-title">
+- Overload during peak usage:
+Some systems, notably the exam system and assignment submission forms, have irregular usage patterns, and need to hold up during exams or before deadlines, while they also shall not use too many resources when not needed. AWS provides some level of flexibility, but only to a certain limit, and requires horizontally scalable software.
 
-**Contents**
+- Preexisting systems:
+Due to concerns with switching to new systems, both the LDAP server and the report generation system are legacy services from the previous systems, and could lead to security issues in the future - especially LDAP, as it is used for authentication.
 
-</div>
-
-A list of identified technical risks or technical debts, ordered by priority
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-“Risk management is project management for grown-ups” (Tim Lister,
-Atlantic Systems Guild.)
-
-This should be your motto for systematic detection and evaluation of
-risks and technical debts in the architecture, which will be needed by
-management stakeholders (e.g. project managers, product owners) as part
-of the overall risk analysis and measurement planning.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-| Risk/Technical Debt | Definition |
-|--------------------|-------------------|
-| Grade management| Too many students might use the system during online <br/> exams and on deadlines for assignments |
-| Overload during exams | Small group responsible, might be bottlenecked -> ideally <br/> supported by automation |
-| Attandance tracking | Needs to happen during class -> preferably done by <br/> students to relief lecturer |
-
-See [Risks and Technical Debt](https://docs.arc42.org/section-11/) in
-the arc42 documentation.
+- Missing automation:
+The grade management system is not automated, which could lead to bottlenecks with staff.
 
 <div style="page-break-after: always;"></div>
 
