@@ -129,35 +129,9 @@ arc42 documentation.
 
 <div class="formalpara-title">
 
-**Contents**
-
-</div>
-
-The project is implemented with service oriented architecture for the most part, but some services are handled in form of micro services.
-
-Our strategies are mostly based on ease of use and accessibility, and as such essential functionality will be held as simple as possible.
-
-
-
-**Motivation**
-
-</div>
-
-Our strategies focus on providing an accessible university management tool for people who do not have extensive technical knowledge.
-
-Another important factor is the consistency and security of the data.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-| Quality Goal                                                 | Solution Approach         |
-| ------------------------------------------------------------ | ------------------------- |
-| Students should be able to access all functionality without additional training. | SOA                       |
-| Resources and information should always be available; backups are required. | SOA                       |
-| Only authorized users should be able to access services.     | Microservices (i.e. LDAP) |
+- Usability for untrained users will be achieved by reducing the landing page to the most important functions, and putting more advanced functionality on corresponding subpages.
+- The platform will be hosted on AWS to allow for easy automatic backups, and ensure availability.
+- We will keep using the univerities existing LDAP-service to ensure only authorized users can access certain functionality.
 
 <div style="page-break-after: always;"></div>
 
