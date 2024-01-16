@@ -131,6 +131,7 @@ arc42 documentation.
 
 - Usability for untrained users will be achieved by reducing the landing page to the most important functions, and putting more advanced functionality on corresponding subpages.
 - The platform will be hosted on AWS to allow for easy automatic backups, and ensure availability.
+- Due to using AWS we will be able to use Amazon provided analytics services to aid with data-driven decision making.
 - We will keep using the univerities existing LDAP-service to ensure only authorized users can access certain functionality.
 
 <div style="page-break-after: always;"></div>
