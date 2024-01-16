@@ -366,103 +366,29 @@ Please copy the structure from level 1 for each selected element.
 
 # Cross-cutting Concepts
 
-<div class="formalpara-title">
+## Development concepts
 
-**Content**
+The code should follow the Java style guidelines as defined [by Google](https://google.github.io/styleguide/javaguide.html), but should be adapted as needed.
 
-</div>
+The system shall have 90% test coverage, with security critical components having at least 95% test coverage.
 
-This section describes overall, principal regulations and solution ideas
-that are relevant in multiple parts (= cross-cutting) of your system.
-Such concepts are often related to multiple building blocks. They can
-include many different topics, such as
+Class properties are always private, and only have getters or setters if needed.
 
--   models, especially domain models
+## Safety and security concepts
 
--   architecture or design patterns
+Any request needs to use the LDAP service for authentication. The LDAP service shall implement Role Based access control. LDAP was already used by the client beforehand, and to avoid security issues when switching to a new system, the existing system will be used.
 
--   rules for using specific technology
+## Architecture and design patterns
 
--   principal, often technical decisions of an overarching (=
-    cross-cutting) nature
+A service oriented architecture shall be used, services shall interface using REST. As AWS will be used, each service is a separate instance.
 
--   implementation rules
+## Operation Concepts
 
-<div class="formalpara-title">
+All systems running in the AWS-cloud need to make daily backup, saving the last 3 days, then weekly back-ups for the last 4 weeks, then monthly backups. All backups will also be stored on an external system. Security critical system shall also make hourly backups, saving them for 24h. 
 
-**Motivation**
+## User Experience concepts (UX)
 
-</div>
-
-Concepts form the basis for *conceptual integrity* (consistency,
-homogeneity) of the architecture. Thus, they are an important
-contribution to achieve inner qualities of your system.
-
-Some of these concepts cannot be assigned to individual building blocks,
-e.g. security or safety.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-The form can be varied:
-
--   concept papers with any kind of structure
-
--   cross-cutting model excerpts or scenarios using notations of the
-    architecture views
-
--   sample implementations, especially for technical concepts
-
--   reference to typical usage of standard frameworks (e.g. using
-    Hibernate for object/relational mapping)
-
-<div class="formalpara-title">
-
-**Structure**
-
-</div>
-
-A potential (but not mandatory) structure for this section could be:
-
--   Domain concepts
-
--   User Experience concepts (UX)
-
--   Safety and security concepts
-
--   Architecture and design patterns
-
--   "Under-the-hood"
-
--   development concepts
-
--   operational concepts
-
-Note: it might be difficult to assign individual concepts to one
-specific topic on this list.
-
-![Possible topics for crosscutting
-concepts](images/08-Crosscutting-Concepts-Structure-EN.png)
-
-See [Concepts](https://docs.arc42.org/section-8/) in the arc42
-documentation.
-
-## *\<Concept 1>*
-
-*\<explanation>*
-
-## *\<Concept 2>*
-
-*\<explanation>*
-
-…
-
-## *\<Concept n>*
-
-*\<explanation>*
+Functionality per page shall always be limited to one topic to keep the UI simple, especially for new users. Each function shall also be clear in its use.
 
 <div style="page-break-after: always;"></div>
 
