@@ -1,16 +1,3 @@
-# 
-
-<div class="note">
-
-This version of the template contains some help and explanations. It is
-used for familiarization with arc42 and the understanding of the
-concepts. For documentation of your own system you use better the
-*plain* version.
-
-</div>
-
-<div style="page-break-after: always;"></div>
-
 # Introduction and Goals
 
 One of our business partners, the university of applied science FH Technikum Wien tasked us to build them a new university management platform. The goal is to create a uniform platform that simplifies all processes for student and class management, grading, and scheduling, and makes them available in one place. As such our stakeholders consist of different factions from the FH Technikum Wien, from here on out refered to as FHTW, which we will elaborate on later on in the document.
@@ -18,12 +5,6 @@ One of our business partners, the university of applied science FH Technikum Wie
 As the FHTW is a public institution, we need to set a focus on stability and testing, as we want to avoid inconsitent behaviour or servere technical issues that would impact day-to-day operations.
 
 ## Requirements Overview
-
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
 
 Our client currently uses a mix of different systems to manage their day-to-day operations, and prefer a single platfrom incorporating all current functionality in one place. Furthermore some workflows are convoluted due to needing multiple different systems, and should be simplified in our system.
 
@@ -60,32 +41,7 @@ Our software has thus to implement the following main functions:
 
 # Architecture Constraints
 
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-Any requirement that constraints software architects in their freedom of
-design and implementation decisions or decision about the development
-process. These constraints sometimes go beyond individual systems and
-are valid for whole organizations and companies.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Architects should know exactly where they are free in their design
-decisions and where they must adhere to constraints. Constraints must
-always be dealt with; they may be negotiable, though.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
+The following table contains the key constraints that should be adhered to, ordered by their relevance.  
 
 | Constraints | Background and/or Motivation |
 | ------------------------- | ------------------------- |
@@ -98,9 +54,6 @@ always be dealt with; they may be negotiable, though.
 subdivide them into technical constraints, organizational and political
 constraints and conventions e.g. programming or versioning guidelines,
 documentation or naming conventions)
-
-See [Architecture Constraints](https://docs.arc42.org/section-2/) in the
-arc42 documentation.
 
 <div style="page-break-after: always;"></div>
 
