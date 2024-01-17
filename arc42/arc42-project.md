@@ -347,48 +347,64 @@ Functionality per page shall always be limited to one topic to keep the UI simpl
 
 # Architecture Decisions
 
-<div class="formalpara-title">
+## ADR 01: Central data storage
+### Status
+Accepted
 
-**Contents**
+### Context
+Inconsistent data across multiple servers impacts data reliability and integrity.
 
-</div>
+### Decision
+We will adopt a singular database as the central data storage solution for our software to ensure a unified and reliable source of data.
 
-The following architectural decisions were taken: 
+### Consequences
+The adoption of a singular database promotes data consistency.<br>
+On the other hand, it will require careful monitoring of system performance and scalability considerations. As the system evolves, periodic assessments may be necessary to ensure the continued effectiveness of the chosen solution.
 
-| Context | Alternatives | Decision | Consequences |
-|--------------------|-------------------|-------------------|-------------------|
-| Inconsistent data with multiple servers | Central data storage | Data volume small enough -> singular DB sufficient | |
-| Too many different features, confusing for non technical users | Keep simple, clearly highlight each features functionality | Choose essential functions and focus on those -> essential features easily visible, extra features/shortcuts for more advanced users | |
-| The university this project is for already uses LDAP for authentication | | We will keep the UI simple and clearly highlight each feature's functionality | We will have to put more care into the design, which will take more time | We will have to put more care into the design, which will take more time |
-| We plan to potentially expand our product to be used by different universities with different requirements in the future | | We will build our application in a service oriented style | The product is modular and customizable for other universities |
-| The university this project is for already uses LDAP for authentication | | We will build upon that and also work with LDAP building our software | We won’t have to look into/use another way to authenticate users, which saves time |
 
-<div class="formalpara-title">
-**Motivation**
+## ADR 02: LDAP Authentification
+### Status
+Accepted
 
-</div>
+### Context
+The university this project is for already uses LDAP for authentication.
 
-Stakeholders of your system should be able to comprehend and retrace
-your decisions.
+### Decision
+We will build upon that and also work with LDAP building our software.
 
-<div class="formalpara-title">
+### Consequences
+A complete overhaul of the university's authentication system will not be necessary. Meaning we won’t have to look into or use another means for authenticating users, which will save time.<br>
+We will need to work with outdated technology (LDAP).
 
-**Form**
 
-</div>
+## ADR 03: Understandability of features
+### Status
+Accepted
 
-Various options:
+### Context
+Too many different features can become confusing for non technical users.
 
--   ADR ([Documenting Architecture
-    Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions))
-    for every important decision
+### Decision
+We will keep the UI-design simple and clearly highlight each features individual functionality.<br>
+We will choose essential functions and put the users' focus on those. Essential features will be easily noticeable, with high visibility, while we will also implement extra features or shortcuts for more advanced users. 
 
--   List or table, ordered by importance and consequences or:
+### Consequences
+More time and care will need to be put into the design, which will make for greater effort.<br>
+Users (especially ones with less technical experience) will have and easier time navigating our software, which will allow them a better user experience. 
 
--   more detailed in form of separate sections per decision
 
-See [Architecture Decisions](https://docs.arc42.org/section-9/) in the
-arc42 documentation. There you will find links and examples about ADR.
+## ADR 04: Service Oriented Architecture
+### Status
+Accepted
+
+### Context
+We plan to potentially expand our product to be used by different universities with different requirements in the future.
+
+### Decision
+We will build our application in a service oriented style.
+
+### Consequences
+The product is modular and customizable for other universities.
 
 <div style="page-break-after: always;"></div>
 
@@ -397,7 +413,6 @@ arc42 documentation. There you will find links and examples about ADR.
 ## Quality Tree
 
 ![Quality Tree](images/10-qualityTree_v2.png)
-
 
 ## Quality Scenarios
 
@@ -409,6 +424,7 @@ arc42 documentation. There you will find links and examples about ADR.
 | 10.2.4 | A server crashes and a user session is recovered within an hour by using persistence mechanisms. |
 | 10.2.5 | A new student can find the see the schedule, course contents, deadlines, and other resources without additional information and within the first minutes of using the application. |
 
+<div style="page-break-after: always;"></div>
 
 # Risks and Technical Debts
 
