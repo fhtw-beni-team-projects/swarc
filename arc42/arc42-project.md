@@ -1,16 +1,3 @@
-# 
-
-<div class="note">
-
-This version of the template contains some help and explanations. It is
-used for familiarization with arc42 and the understanding of the
-concepts. For documentation of your own system you use better the
-*plain* version.
-
-</div>
-
-<div style="page-break-after: always;"></div>
-
 # Introduction and Goals
 
 One of our business partners, the university of applied science FH Technikum Wien tasked us to build them a new university management platform. The goal is to create a uniform platform that simplifies all processes for student and class management, grading, and scheduling, and makes them available in one place. As such our stakeholders consist of different factions from the FH Technikum Wien, from here on out refered to as FHTW, which we will elaborate on later on in the document.
@@ -18,12 +5,6 @@ One of our business partners, the university of applied science FH Technikum Wie
 As the FHTW is a public institution, we need to set a focus on stability and testing, as we want to avoid inconsitent behaviour or servere technical issues that would impact day-to-day operations.
 
 ## Requirements Overview
-
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
 
 Our client currently uses a mix of different systems to manage their day-to-day operations, and prefer a single platfrom incorporating all current functionality in one place. Furthermore some workflows are convoluted due to needing multiple different systems, and should be simplified in our system.
 
@@ -60,32 +41,7 @@ Our software has thus to implement the following main functions:
 
 # Architecture Constraints
 
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-Any requirement that constraints software architects in their freedom of
-design and implementation decisions or decision about the development
-process. These constraints sometimes go beyond individual systems and
-are valid for whole organizations and companies.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Architects should know exactly where they are free in their design
-decisions and where they must adhere to constraints. Constraints must
-always be dealt with; they may be negotiable, though.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
+The following table contains the key constraints that should be adhered to, ordered by their relevance.  
 
 | Constraints | Background and/or Motivation |
 | ------------------------- | ------------------------- |
@@ -98,9 +54,6 @@ always be dealt with; they may be negotiable, though.
 subdivide them into technical constraints, organizational and political
 constraints and conventions e.g. programming or versioning guidelines,
 documentation or naming conventions)
-
-See [Architecture Constraints](https://docs.arc42.org/section-2/) in the
-arc42 documentation.
 
 <div style="page-break-after: always;"></div>
 
@@ -441,118 +394,21 @@ arc42 documentation. There you will find links and examples about ADR.
 
 # Quality Requirements
 
-<div class="formalpara-title">
-
-**Content**
-
-</div>
-
-This section contains all quality requirements as quality tree with
-scenarios. The most important ones have already been described in
-section 1.2. (quality goals)
-
-Here you can also capture quality requirements with lesser priority,
-which will not create high risks when they are not fully achieved.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Since quality requirements will have a lot of influence on architectural
-decisions you should know for every stakeholder what is really important
-to them, concrete and measurable.
-
-See [Quality Requirements](https://docs.arc42.org/section-10/) in the
-arc42 documentation.
-
 ## Quality Tree
 
-<div class="formalpara-title">
+![Quality Tree](images/10-qualityTree_v2.png)
 
-**Content**
-
-</div>
-
-The quality tree (as defined in ATAM – Architecture Tradeoff Analysis
-Method) with quality/evaluation scenarios as leafs.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-The tree structure with priorities provides an overview for a sometimes
-large number of quality requirements.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-The quality tree is a high-level overview of the quality goals and
-requirements:
-
--   tree-like refinement of the term "quality". Use "quality" or
-    "usefulness" as a root
-
--   a mind map with quality categories as main branches
-
-In any case the tree should include links to the scenarios of the
-following section.
 
 ## Quality Scenarios
 
-<div class="formalpara-title">
+| Id        | Scenario        |
+|-------------|-------------------|
+| 10.2.1 | Automatic grading is correct with a 3% margin of error |
+| 10.2.2 | The correct grades, added by lecturers or by the system (in the case of automatic grading), are shown to the student.  |
+| 10.2.3 | A user has bad internet connection. Upload process does not have to be started anew. |
+| 10.2.4 | A server crashes and a user session is recovered within an hour by using persistence mechanisms. |
+| 10.2.5 | A new student can find the see the schedule, course contents, deadlines, and other resources without additional information and within the first minutes of using the application. |
 
-**Contents**
-
-</div>
-
-Concretization of (sometimes vague or implicit) quality requirements
-using (quality) scenarios.
-
-These scenarios describe what should happen when a stimulus arrives at
-the system.
-
-For architects, two kinds of scenarios are important:
-
--   Usage scenarios (also called application scenarios or use case
-    scenarios) describe the system’s runtime reaction to a certain
-    stimulus. This also includes scenarios that describe the system’s
-    efficiency or performance. Example: The system reacts to a user’s
-    request within one second.
-
--   Change scenarios describe a modification of the system or of its
-    immediate environment. Example: Additional functionality is
-    implemented or requirements for a quality attribute change.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Scenarios make quality requirements concrete and allow to more easily
-measure or decide whether they are fulfilled.
-
-Especially when you want to assess your architecture using methods like
-ATAM you need to describe your quality goals (from section 1.2) more
-precisely down to a level of scenarios that can be discussed and
-evaluated.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-Tabular or free form text.
-
-<div style="page-break-after: always;"></div>
 
 # Risks and Technical Debts
 
