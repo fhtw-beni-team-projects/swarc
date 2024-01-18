@@ -126,7 +126,7 @@ All services interface via REST, the full specifications will be found in the Op
 The course material component constructs a course in form of the defined course xml format (\*not actual), or constructs questions based on the material. It takes data from the persistence service. The following methods are available through its REST-interface, as defined in the OpenAPI .yaml file:
 - `GET /course/{courseID}`: returns an xml formated course. A lecturers view will be returned automatically if authorized as such via token.
 - `POST /course/{courseID}/exam`: returns exam questions (xml), `class_start` and `class_end` as paramters specify for which classes to take questions from
-- `GET /course/{courseID}/assignemnts/{class}`: returns assignment text and deadline in unix epoch (xml) for each assignemnt in the class or an empty list, class specifies which class to take from (optional).
+- `GET /course/{courseID}/assignments/{class}`: returns assignment text and deadline in unix epoch (xml) for each assignment in the class or an empty list, class specifies which class to take from (optional).
 
 3. Level 3
 
