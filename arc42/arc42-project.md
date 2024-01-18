@@ -336,4 +336,9 @@ Poor code quality may pose risks to system's stability, maintainability, and fut
 |University Mailing System|SOGO, an open-source messaging service. The university uses it to send emails|
 |Reports|Can be of two types: of student progress or enrollment|
 |Administrator|Refers to the person responsible for generating reports|
+|Faculty Member|Manages course grades and tracks attendance through the university management application|
+|Attendance Tracking/Data|Checking during each class session (of a given course) whether students are absent or present. This data is persisted|
+|Class Information|Synonym for “Course contents”, “Course material”, this term refers to the content that Lecturers create for a given class or course, such as units and concepts students will learn, test or assignments|
+|Notification|This term refers to two different notifications that happen simultaneously. One through the web page (users can view their notifications when logged in) and another through the University Mailing System|
+
 
