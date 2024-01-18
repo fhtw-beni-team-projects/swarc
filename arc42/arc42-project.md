@@ -28,7 +28,7 @@ Please see the full [business requirements document](https://github.com/marvkos/
 |--------------|------------------|
 | Learnability & Understandability | A new student can find the see the schedule, course contents, deadlines, and other resources without additional information and within the first minutes of using the application. |
 | Accuracy | The correct grades, added by lecturers or by the system (in the case of automatic grading), are shown to the student. |
-| Recoverability | A server crashes and a user session is recovered within an hour by using persistence mechanisms. |
+| Recoverability | A server crashes and a user session is recovered within the first 10 minutes by using persistence mechanisms. |
 | Fault tolerance | A user has bad internet connection. Upload process does not have to be started anew. |
 
 ## Stakeholders
