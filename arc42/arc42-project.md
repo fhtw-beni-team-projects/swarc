@@ -134,92 +134,28 @@ The course material component constructs a course in form of the defined course 
 
 # Runtime View
 
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-The runtime view describes concrete behavior and interactions of the
-system’s building blocks in form of scenarios from the following areas:
-
--   important use cases or features: how do building blocks execute
-    them?
-
--   interactions at critical external interfaces: how do building blocks
-    cooperate with users and neighboring systems?
-
--   operation and administration: launch, start-up, stop
-
--   error and exception scenarios
-
-Remark: The main criterion for the choice of possible scenarios
-(sequences, workflows) is their **architectural relevance**. It is
-**not** important to describe a large number of scenarios. You should
-rather document a representative selection.
-
-You should understand how (instances of) building blocks of your system
-perform their job and communicate at runtime. You will mainly capture
-scenarios in your documentation to communicate your architecture to
-stakeholders that are less willing or able to read and understand the
-static models (building block view, deployment view).
-
-There are many notations for describing scenarios, e.g.
-
--   numbered list of steps (in natural language)
-
--   activity diagrams or flow charts
-
--   sequence diagrams
-
--   BPMN or EPCs (event process chains)
-
--   state machines
-
--   …
-
-See [Runtime View](https://docs.arc42.org/section-6/) in the arc42
-documentation.
-
 ## \<Student Enrollment>
+
+This scenario showcases the standard procedure that happens during most of the use cases, and how the application Moodle++ interacts with external blocks. 
 
 ![General context diagram](images/UseCase1.png)
 
-TODO: description of the notable aspects of the interactions between the building block instances depicted in this diagram.
+Upon launch, the user is always authentificated through LDAP.
 
-## \<Attendance Tracking>
+Notifications are sent through email in addition to the users Moodle++ account.
 
-**Steps:**
-1. The faculty member logs in to the university management application.
-2. The faculty member navigates to the attendance tracking page.
-3. The faculty member selects the class session they want to track attendance for.
-4. The system displays a list of enrolled students in the class.
-5. The faculty member marks each student as present or absent.
-6. The system updates the attendance data for the selected class session.
-7. The system sends a notification to the students who were marked absent.
+Information is stored/persisted in the MongoDB Databank.
 
-## \<Course Grades Management>
+## \<Schedule Generation>
 
-**Steps:**
-1. The faculty member logs in to the university management application (Moodle++).
-2. The faculty member navigates to the course grades page.
-3. The faculty member selects the course they want to manage grades for.
-4. The system displays a list of enrolled students in the course.
-5. The faculty member enters the grades for each student in the course.
-6. The system calculates and displays the course grade for each student.
-7. The system updates the course grade data in the system.
-8. The system sends a notification to the students regarding their updated course grade.
+A unique feature of Moodle++ is it’s automatic schedule generation based on class information (and data from other courses).
 
-## \<View Course Material>
+Prerequisites:
+-	Students have to be enrolled in a course based on the description.
+-	After the enrollement period and before the start of the semester, the course contents should be uploaded by a lecturer/faculty member.
+- Enough students should be enrolled to form a „Group”.
 
-**Steps:**
-1. The student navigates to the course dashboard.
-2. The student selects the course they want to view the material for.
-3. The student selects the "Course Material" tab.
-4. The student browses the available material.
-5. If desired, the student can download the material.
-
-TODO: description of the notable aspects of the interactions between the building block instances depicted in this diagram.
+TODO: Diagram (unfinished, WIP)
 
 ## \<Generate Reports>
 
@@ -236,81 +172,8 @@ TODO: Diagram
 
 # Deployment View
 
-<div class="formalpara-title">
-
-**Content**
-
-</div>
-
-The deployment view describes:
-
-1.  technical infrastructure used to execute your system, with
-    infrastructure elements like geographical locations, environments,
-    computers, processors, channels and net topologies as well as other
-    infrastructure elements and
-
-2.  mapping of (software) building blocks to that infrastructure
-    elements.
-
-Often systems are executed in different environments, e.g. development
-environment, test environment, production environment. In such cases you
-should document all relevant environments.
-
-Especially document a deployment view if your software is executed as
-distributed system with more than one computer, processor, server or
-container or when you design and construct your own hardware processors
-and chips.
-
-From a software perspective it is sufficient to capture only those
-elements of an infrastructure that are needed to show a deployment of
-your building blocks. Hardware architects can go beyond that and
-describe an infrastructure to any level of detail they need to capture.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Software does not run without hardware. This underlying infrastructure
-can and will influence a system and/or some cross-cutting concepts.
-Therefore, there is a need to know the infrastructure.
-
-Maybe a highest level deployment diagram is already contained in section
-3.2. as technical context with your own infrastructure as ONE black box.
-In this section one can zoom into this black box using additional
-deployment diagrams:
-
--   UML offers deployment diagrams to express that view. Use it,
-    probably with nested diagrams, when your infrastructure is more
-    complex.
-
--   When your (hardware) stakeholders prefer other kinds of diagrams
-    rather than a deployment diagram, let them use any kind that is able
-    to show nodes and channels of the infrastructure.
-
-See [Deployment View](https://docs.arc42.org/section-7/) in the arc42
-documentation.
-
-## Infrastructure Level 1
-
-Describe (usually in a combination of diagrams, tables, and text):
-
--   distribution of a system to multiple locations, environments,
-    computers, processors, .., as well as physical connections between
-    them
-
--   important justifications or motivations for this deployment
-    structure
-
--   quality and/or performance features of this infrastructure
-
--   mapping of software artifacts to elements of this infrastructure
-
-For multiple environments or alternative deployments please copy and
-adapt this section of arc42 for all relevant environments.
-
-***\<Overview Diagram>***
+## Overview Diagramm
+![Deployment Diagramm](images/DeploymentDiagramm.png)
 
 Motivation  
 *\<explanation in text form>*
@@ -321,26 +184,18 @@ Quality and/or Performance Features
 Mapping of Building Blocks to Infrastructure  
 *\<description of the mapping>*
 
-## Infrastructure Level 2
+|Node| Description|
+|----|----|
+|Client Computer| Users can access the Moodle++ web page from their computers or laptops|
+|Client Smartphone| Alternatively, users can access the Moodle++ web page throught their mobile devices|
+|Web API| Includes the API Gateway and the necessary firewall rules for safety |
+|Application| Comprises the User Interface (frontend with React) Business Logic (backend with Node.js)|
+|Persistence| Contains MongoDB Database with the following schemas: Courses, Students, Faculties, Grades, Class Sessions (Attendance Management), Transactions (Payments) |
+|Test | The EC2 test instance runs test all other Moodle++ nodes (persistence, web API and application)|
 
-Here you can include the internal structure of (some) infrastructure
-elements from level 1.
-
-Please copy the structure from level 1 for each selected element.
-
-### *\<Infrastructure Element 1>*
-
-*\<diagram + explanation>*
-
-### *\<Infrastructure Element 2>*
-
-*\<diagram + explanation>*
-
-…
-
-### *\<Infrastructure Element n>*
-
-*\<diagram + explanation>*
+Prerequisites:
+Moodle++ developers need an environment for working with React, Node.js, MongoDB and the external Authentication Service (LDAP library).
+Developers require an AWS account for deployment along with the deployment specification.
 
 <div style="page-break-after: always;"></div>
 
@@ -481,32 +336,10 @@ Poor code quality may pose risks to system's stability, maintainability, and fut
 
 </div>
 
-The most important domain and technical terms that your stakeholders use
-when discussing the system.
+|Term|Definition|
+|---|---|
+|University Management Application|Moodle++, in other words, the system developed in this project|
+|University Mailing System|SOGO, an open-source messaging service. The university uses it to send emails|
+|Reports|Can be of two types: of student progress or enrollment|
+|Administrator|Refers to the person responsible for generating reports|
 
-You can also see the glossary as source for translations if you work in
-multi-language teams.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-You should clearly define your terms, so that all stakeholders
-
--   have an identical understanding of these terms
-
--   do not use synonyms and homonyms
-
-A table with columns \<Term> and \<Definition>.
-
-Potentially more columns in case you need translations.
-
-See [Glossary](https://docs.arc42.org/section-12/) in the arc42
-documentation.
-
-| Term        | Definition        |
-|-------------|-------------------|
-| *\<Term-1>* | *\<definition-1>* |
-| *\<Term-2>* | *\<definition-2>* |
