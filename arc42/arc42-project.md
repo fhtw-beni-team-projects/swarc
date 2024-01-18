@@ -436,6 +436,12 @@ Due to concerns with switching to new systems, both the LDAP server and the repo
 - Missing automation:
 The grade management system is not automated, which could lead to bottlenecks with staff.
 
+- Limited scalabilty in central data storage:
+As the system was initially designed to handle a small volume of data, there is a potential for scalability issues as the dataset grows over time. This limitation may manifest in performance bottlenecks, increased response times, and challenges in accommodating a larger number of concurrent users and data entries.
+
+- Code Quality:
+Poor code quality may pose risks to system's stability, maintainability, and future development. Issues could arise in the form of poorly structured, unoptimized, or error-prone code and would increase the likelihood of bugs.
+
 <div style="page-break-after: always;"></div>
 
 # Glossary
