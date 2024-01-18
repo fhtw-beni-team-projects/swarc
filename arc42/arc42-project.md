@@ -134,11 +134,11 @@ The course material component constructs a course in form of the defined course 
 
 # Runtime View
 
-## \<Student Enrollment>
+## Student Enrollment
 
 This scenario showcases the standard procedure that happens during most of the use cases, and how the application Moodle++ interacts with external blocks. 
 
-![General context diagram](images/UseCase1.png)
+![Student Enrollment](images/UseCase1.png)
 
 Upon launch, the user is always authentificated through LDAP.
 
@@ -146,7 +146,7 @@ Notifications are sent through email in addition to the users Moodle++ account.
 
 Information is stored/persisted in the MongoDB Databank.
 
-## \<Schedule Generation>
+## Schedule Generation
 
 A unique feature of Moodle++ is it’s automatic schedule generation based on class information (and data from other courses).
 
@@ -155,17 +155,18 @@ Prerequisites:
 -	After the enrollement period and before the start of the semester, the course contents should be uploaded by a lecturer/faculty member.
 - Enough students should be enrolled to form a „Group”.
 
-TODO: Diagram (unfinished, WIP)
+![Schedule Generation](images/ScheduleGeneration.png)
 
-## \<Generate Reports>
-
-TODO: Diagram
+## Generate Reports
 
 **Steps:**
-1. The administrator navigates to the "Reports" section.
-2. The administrator selects the type of report they want to generate.
-3. The administrator selects the parameters for the report, such as the date range or specific courses.
-4. The system generates the report and displays it to the administrator.
+1. The administrator logs in and navigates to the "Reports" section on the Moodle++ web page, where he selects the type of report to be generated.
+2. The request is sent to the application with parameters such as the date range or specific courses, selected by the administrator.
+3. An instance of the ReportGenerator is created within the system.
+4. The report is generated.
+    4.1. If a student progress report is to be generated, the ReportGenerator retrieves the necessary evaluation criteria previously set by the lecturer in addition to the given parameters. The score of the student is calculated, and the report is generated. 
+    4.2. If an enrollment report is necessary, the system retrieves the data and generates the report.
+    In both cases, the report is displayed to the administrator.
 5. If desired, the administrator can download the report.
 
 <div style="page-break-after: always;"></div>
@@ -174,15 +175,6 @@ TODO: Diagram
 
 ## Overview Diagramm
 ![Deployment Diagramm](images/DeploymentDiagramm.png)
-
-Motivation  
-*\<explanation in text form>*
-
-Quality and/or Performance Features  
-*\<explanation in text form>*
-
-Mapping of Building Blocks to Infrastructure  
-*\<description of the mapping>*
 
 |Node| Description|
 |----|----|
