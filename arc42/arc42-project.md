@@ -20,6 +20,8 @@ Our software has thus to implement the following main functions:
 | Course grade management | Tracking of assignment and exam scores                                                         | Lecturers      |
 | Report generation       | Calculates and sends out final reports based on the grades from the grade management system    | Administration |
 
+Please see the full [business requirements document](https://github.com/marvkos/swarc-material/blob/main/materials/university%20managment/brd.md) for more details.
+
 ## Quality Goals
 
 | Quality Goal | Quality Scenario |
